@@ -1,11 +1,11 @@
 import AlertMessage from "@/Components/Alert/AlertMessage";
 import InfoButton from "@/Components/InfoButton";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
-import { Head, Link } from "@inertiajs/react";
+import { Head, Link, usePage } from "@inertiajs/react";
 
 export default function UserShow({ auth, user}) {
 
-    const { flash } = usePage().props;
+    const {flash} = usePage().props;
 
     return (
         <AuthenticatedLayout
@@ -27,7 +27,7 @@ export default function UserShow({ auth, user}) {
                         </div>
                     </div>
 
-                    <AlertMessage message={ flash } />
+                    <AlertMessage message={flash} />
 
                     <div className="bg-gray-50 text-sm dark:bg-gray-700 p-4 rounded-lg shadow-m">
                         <div className="mb-4">
