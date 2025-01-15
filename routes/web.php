@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SectorController;
 use App\Http\Controllers\UserController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -32,6 +33,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/edit-user/{user}', [UserController::class, 'edit'])->name('users.edit');
     route::put('/update-user/{user}', [UserController::class, 'update'])->name('users.update');
     route::delete('/destroy-user/{user}', [UserController::class, 'destroy'])->name('users.destroy');
+
+    Route::get('/sectors', [SectorController::class, 'index'])->name('sector.index');
 
 
 });
