@@ -38,16 +38,16 @@ export default function AuthenticatedLayout({ header, children }) {
                                     Usuários
                                 </NavLink>
 
-                                <NavLink
-                                    href={route('users.index')}
-                                    active={route().current('users.index')}
+                                {/* <NavLink
+                                    href={route('assets.index')}
+                                    active={route().current('assets.index')}
                                 >
                                     Ativos
-                                </NavLink>
+                                </NavLink> */}
 
                                 <NavLink
-                                    href={route('sector.index')}
-                                    active={route().current('sector.index')}
+                                    href={route('sectors.index')}
+                                    active={route().current('sectors.index')}
                                 >
                                     Locais
                                 </NavLink>

@@ -34,7 +34,7 @@ Route::middleware('auth')->group(function () {
     route::put('/update-user/{user}', [UserController::class, 'update'])->name('users.update');
     route::delete('/destroy-user/{user}', [UserController::class, 'destroy'])->name('users.destroy');
 
-    Route::get('/sectors', [SectorController::class, 'index'])->name('sector.index');
+    Route::get('/sectors', [SectorController::class, 'index'])->name('sectors.index');
 
 
 });

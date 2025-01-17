@@ -11,9 +11,10 @@ class SectorController extends Controller
 {
     public function index(): Response
     {
-        $sector = Sector::orderByDesc('id')->paginate();
+        $sectors = Sector::orderByDesc('id');
 
 
-        return Inertia::render('Sector/SectorIndex', ['sector' => $sector]);
+
+        return Inertia::render('Sectors/SectorIndex', ['sectors' => $sectors]);
     }
 }
