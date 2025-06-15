@@ -11,8 +11,7 @@ class SectorController extends Controller
 {
     public function index(): Response
     {
-        $sectors = Sector::orderByDesc('id');
-
+        $sectors = Sector::orderByDesc('id')->get();
 
 
         return Inertia::render('Sectors/SectorIndex', ['sectors' => $sectors]);

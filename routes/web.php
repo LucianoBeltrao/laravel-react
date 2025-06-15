@@ -35,6 +35,23 @@ Route::middleware('auth')->group(function () {
     route::delete('/destroy-user/{user}', [UserController::class, 'destroy'])->name('users.destroy');
 
     Route::get('/sectors', [SectorController::class, 'index'])->name('sectors.index');
+    Route::get('/show-sector/{sector}', [SectorController::class, 'show'])->name('sectors.show');
+    Route::get('/create-sector', [SectorController::class, 'create'])->name('sectors.create');
+    Route::get('/store-sector', [SectorController::class, 'store'])->name('sectors.store');
+
+    Route::get('/edit-sector/{sector}', [SectorController::class, 'edit'])->name('sectors.edit');
+    route::put('/update-sector/{sector}', [SectorController::class, 'update'])->name('sectors.update');
+    route::delete('/destroy-sector/{sector}', [SectorController::class, 'destroy'])->name('sectors.destroy');
+
+    Route::get('/assets', [AssetController::class, 'index'])->name('assets.index');
+    Route::get('/show-asset/{asset}', [AssetController::class, 'show'])->name('assets.show');
+    Route::get('/create-asset', [AssetController::class, 'create'])->name('assets.create');
+    Route::get('/store-asset', [AssetController::class, 'store'])->name('assets.store');
+
+    Route::get('/edit-sector/{asset}', [AssetController::class, 'edit'])->name('assets.edit');
+    route::put('/update-sector/{asset}', [AssetController::class, 'update'])->name('assets.update');
+    route::delete('/destroy-sector/{asset}', [AssetController::class, 'destroy'])->name('assets.destroy');
+
 
 
 });

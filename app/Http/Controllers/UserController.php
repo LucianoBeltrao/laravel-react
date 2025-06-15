@@ -14,7 +14,6 @@ class UserController extends Controller
     {
         $users = User::orderByDesc('id')->paginate();
 
-
         return Inertia::render('Users/UserIndex', ['users' => $users]);
     }
 

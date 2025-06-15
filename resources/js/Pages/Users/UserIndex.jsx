@@ -6,6 +6,8 @@ import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { Head, Link, usePage } from "@inertiajs/react";
 import ConfirmDeleteButton from "@/Components/Delete/ConfirmDeleteButton";
 import AlertMessage from "@/Components/Alert/AlertMessage";
+import ShowIcon from "@/Components/Icons/ShowIcon";
+import EditIcon from "@/Components/Icons/EditIcon";
 
 export default function UserIndex({ auth, users }) {
 
@@ -36,7 +38,7 @@ export default function UserIndex({ auth, users }) {
 
                     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                         <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-700">
-                        <thead class="text-xs text-gray-700 uppercase bg-gray-300 dark:bg-gray-700 dark:text-gray-700">
+                            <thead class="text-xs text-gray-700 uppercase bg-gray-300 dark:bg-gray-700 dark:text-gray-700">
                                 <tr>
                                     <th scope="col" class="px-6 py-3">
                                         ID
@@ -55,27 +57,29 @@ export default function UserIndex({ auth, users }) {
                             <tbody className="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
                                 {users.data.map((user) => (
                                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700" key={user.id}>
-                                        <td className="px-6 py-2 text-sm text-gray-700 tracking-wider">
+                                        <td className="px-6 py-2 text-sm text-left text-gray-700 tracking-wider">
                                             {user.id}
                                         </td>
-                                        <td className="px-6 py-2 text-sm text-gray-700 tracking-wider">
+                                        <td className="px-6 py-2 text-sm text-left text-gray-700 tracking-wider">
                                             {user.name}
                                         </td>
-                                        <td className="px-6 py-2 text-sm text-gray-700 tracking-wider">
+                                        <td className="px-6 py-2 text-sm text-left text-gray-700 tracking-wider">
                                             {user.email}
                                         </td>
                                         <td className="px-6 py-2 text-center text-gray-700 tracking-wider">
-                                            <Link href={route('users.show', { id: user.id })}>
-                                                <PrimaryButton className="ms-1">
-                                                    Visualizar
-                                                </PrimaryButton>
-                                            </Link>
-                                            <Link href={route('users.edit', { id: user.id })}>
-                                                <WarningButton className="ms-1">
-                                                    Editar
-                                                </WarningButton>
-                                            </Link>
-                                            <ConfirmDeleteButton id={user.id} routeName="users.destroy" />
+                                            <div className="flex justify-center items-center gap-x-2">
+                                                <Link href={route('users.show', { id: user.id })}>
+                                                    
+                                                        <ShowIcon className="w-6 h-6 text-gray-500 hover:text-blue-500 cursor-pointer"/>
+                                                    
+                                                </Link>
+                                                <Link href={route('users.edit', { id: user.id })}>
+                                                    
+                                                        <EditIcon className="w-6 h-6 text-orange-500 hover:text-blue-500 cursor-pointer"/>
+                                                   
+                                                </Link>
+                                                <ConfirmDeleteButton id={user.id} routeName="users.destroy" />
+                                            </div>
                                         </td>
                                     </tr>))}
 

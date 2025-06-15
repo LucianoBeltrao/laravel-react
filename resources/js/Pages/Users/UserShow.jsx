@@ -2,10 +2,12 @@ import AlertMessage from "@/Components/Alert/AlertMessage";
 import InfoButton from "@/Components/InfoButton";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { Head, Link, usePage } from "@inertiajs/react";
+import { BentoGrid, BentoGridItem } from "@/Components/ui/bento-grid";
+import BackIcon from "@/Components/Icons/BackIcon";
 
-export default function UserShow({ auth, user}) {
+export default function UserShow({ auth, user }) {
 
-    const {flash} = usePage().props;
+    const { flash } = usePage().props;
 
     return (
         <AuthenticatedLayout
@@ -15,7 +17,7 @@ export default function UserShow({ auth, user}) {
             <Head title="Usuário" />
 
             <div className="py-4 max-w-7x1 mx-auto sm:px-6 lg:px-8">
-                <div className="overflow-hidden bg-white shadow-lg sm:rounded-lg dark:bg-gray-800">
+                {/* <div className="overflow-hidden bg-white shadow-lg sm:rounded-lg dark:bg-gray-800">
                     <div className="flex justify-between items-center m-4">
                         <h3 className="text-lg">Visualizar</h3>
                         <div className="">
@@ -43,7 +45,26 @@ export default function UserShow({ auth, user}) {
                             <p className="text-gray-600 dark:text-gray-200">{user.email}</p>
                         </div>
                     </div>
-                </div>
+                </div> */}
+
+                <BentoGrid>
+                    <BentoGridItem
+                        title="Nome"
+                        description={user.name}
+                        icon={<span>🌟</span>}
+                    />
+                    <BentoGridItem
+                        title="Email"
+                        description={user.email}
+                        icon={<span>🚀</span>}
+                    />
+                    <Link href={route('users.index')}>
+                        <InfoButton>
+                            <BackIcon className="w-6 h-6 text-white" />
+                        </InfoButton>
+                    </Link>
+                    {/* ... */}
+                </BentoGrid>
             </div>
 
         </AuthenticatedLayout>
