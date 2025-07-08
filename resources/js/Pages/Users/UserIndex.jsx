@@ -24,7 +24,7 @@ export default function UserIndex({ auth, users }) {
             <div className="py-4 max-w-7x1 mx-auto sm:px-6 lg:px-36">
                 <div className="overflow-hidden bg-white shadow-lg sm:rounded-lg dark:bg-gray-800">
                     <div className="flex justify-between items-center m-4">
-                        <h3 className="text-lg">Listar</h3>
+                        <h3 className="text-lg">Usuários Cadastrados</h3>
                         <div className="">
                             <Link href={route('users.create')}>
                                 <SuccessButton>

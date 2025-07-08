@@ -11,4 +11,10 @@ class Sector extends Model
      /** @use HasFactory<\Database\Factories\UserFactory> */
      use HasFactory;
 
+     public function assets()
+{
+    return $this->hasMany(Asset::class);
+}
+
+
 }
